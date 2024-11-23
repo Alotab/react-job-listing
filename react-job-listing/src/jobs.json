@@ -1,5 +1,5 @@
 {
-  "jobs":[
+  "jobs": [
     {
       "id": "1",
       "title": "Senior React Developer",
@@ -83,6 +83,20 @@
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
       }
+    },
+    {
+      "id": "ed90",
+      "title": "React Try Dev",
+      "type": "Part-Time",
+      "location": "San Diego, CA",
+      "description": "We are not seriously looking  tho",
+      "salary": "$50K - 60K",
+      "company": {
+        "name": "The Boring Company",
+        "description": "We are just lazy in our work",
+        "contactEmail": "boring@boring.com",
+        "contactPhone": "345-767-0999"
+      }
     }
-      ]
+  ]
 }

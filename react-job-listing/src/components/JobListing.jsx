@@ -18,8 +18,8 @@ const JobListing = ({ job }) => {
     <div className="bg-white rounded-xl shadow-md relative">
       <div className="p-4">
         <div className="mb-6">
-          <div className="text-gray-600 my-2">{job.type || "Full-Time"}</div>
-          <h3 className="text-xl font-bold">{job.name || "Job Title"}</h3>
+          <div className="text-gray-600 my-2">{job.type}</div>
+          <h3 className="text-xl font-bold">{ job.title }</h3>
         </div>
 
         <div className="mb-5">
@@ -28,7 +28,7 @@ const JobListing = ({ job }) => {
 
         <button onClick={()=> setShowFullDescription(!showFullDescription)} className="text-indigo-500 mb-5 hover:text-indigo-600">{ showFullDescription ? 'Less' : 'More'}</button>
 
-        <h3 className="text-indigo-500 mb-2">{job.salary || "$0 - $0 / Year"}</h3>
+        <h3 className="text-indigo-500 mb-2">{job.salary}</h3>
 
         <div className="border border-gray-100 mb-5"></div>
 
@@ -38,7 +38,7 @@ const JobListing = ({ job }) => {
             {job.location || "Location not specified"}
           </div>
           <Link
-            to={`job.html?id=${job.id}`}
+            to={`/jobs/${job.id}`}
             className="h-[36px] bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg text-center text-sm"
           >
             Read More
