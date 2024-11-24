@@ -44,36 +44,25 @@ const App = () => {
     return;
   }
 
-  // Update Job
-  // const updateJob = async (job) => {
-  //   const res = await fetch(`api/jobs/${job.id}`, {
-  //     method: 'PUT',
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(job)
-  //   });
-  //   return;
-  // }
 
   // Update Job function
-const updateJob = async (job) => {
-  const res = await fetch(`/api/jobs/${job.id}`, {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(job),
-  });
+  const updateJob = async (job) => {
+    const res = await fetch(`/api/jobs/${job.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(job),
+    });
 
-  if (res.ok) {
-    const updatedJob = await res.json();  // Assuming your API sends back the updated job
-    return updatedJob;
-  } else {
-    console.error('Failed to update job');
-    throw new Error('Failed to update job');
-  }
-};
+    if (res.ok) {
+      const updatedJob = await res.json();  // Assuming your API sends back the updated job
+      return updatedJob;
+    } else {
+      console.error('Failed to update job');
+      throw new Error('Failed to update job');
+    }
+  };
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -82,7 +71,6 @@ const updateJob = async (job) => {
         <Route path='/jobs' element={<JobsPage />}/>
         <Route path='/add-job' element={<AddJobPage addJobSubmit={addJob}/>}/>
         <Route path='/edit-job/:id' element={<EditJobPage updateJobSubmit={updateJob}/>} loader={jobLoader}/>  
-
         <Route path='/jobs/:id' element={<JobPage deleteJob={deleteJob }/>} loader={jobLoader}/>  
         <Route path='*' element={<NotFoungPage />}/>
       </Route>
